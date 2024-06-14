@@ -4,6 +4,8 @@ import "@react-pdf-viewer/core/lib/styles/index.css";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 
+import { AiOutlineShareAlt } from "react-icons/ai";
+
 const PdfViewer = ({ file }: any) => {
   const [pdfBlob, setPdfBlob] = useState<Blob | null>(null);
   const [pdfBlobUrl, setPdfBlobUrl] = useState("");
@@ -48,9 +50,9 @@ const PdfViewer = ({ file }: any) => {
     <div className="relative">
       <button
         onClick={handleShare}
-        className="p-1.5 md:p-2 text-[10px] md:text-lg bg-black text-white hover:shadow-lg md:rounded-lg absolute z-50 md:top-16 top-12 right-3 md:right-10"
+        className="text-gray-600 text-xl absolute z-50 md:top-2 top-2 right-10 md:right-56"
       >
-        Share
+        <AiOutlineShareAlt />
       </button>
       {pdfBlobUrl && (
         <Worker workerUrl="/pdf.worker.min.js">
